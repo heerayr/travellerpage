@@ -21,12 +21,45 @@ input {
   overflow: hidden;
 }
 
+        /* Smart Panel Styling */
+        
+    
+
 .forms-container {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+}
+.smart-panel {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d0e3ff; /* Light background to match the rest of the elements */
+  color: #333; /* Dark text color for contrast */
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+  width: 280px; /* Smaller width */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.smart-panel:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+.smart-panel h1 {
+  margin: 0;
+  font-size: 18px; /* Smaller font size */
+  font-weight: bold;
+}
+.smart-panel p {
+  margin: 5px 0 0;
+  font-size: 12px; /* Smaller font size */
 }
 
 .signin-signup {
@@ -84,7 +117,7 @@ form.sign-in-form {
 .input-field em {
   text-align: center;
   line-height: 55px;
-  color: #c1fffb;
+  color: #e967eda2;
   transition: 0.5s;
   font-size: 1.1rem;
 }
@@ -104,17 +137,6 @@ form.sign-in-form {
   font-weight: 400;
 }
 
-.social-text {
-  padding: 0.7rem 0;
-  font-size: 1rem;
-}
-
-.social-media {
-  display: flex;
-  justify-content: center;
-}
-
-
 .btn {
   width: 150px;
   background-color: #00bfff;
@@ -129,7 +151,6 @@ form.sign-in-form {
   cursor: pointer;
   transition: 0.5s;
 }
-
 
 .btn:hover {
   background-color: #91eeff;
@@ -254,7 +275,7 @@ form.sign-in-form {
   pointer-events: all;
 }
 
-@media (max-width: 871px) {
+@media (max-width: 870px) {
   .container {
     min-height: 800px;
     height: 100vh;
@@ -386,4 +407,5 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
+  
 }
