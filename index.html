@@ -8,30 +8,13 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="/img/favicon.png" />
     <title>Traveler Login & Registration Form</title>
-    <style>
-        /* Smart panel styling */
-        .smart-panel {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: #f4f4f4;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            padding: 10px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        .smart-panel h1 {
-            margin: 0;
-            font-size: 20px;
-            color: #333;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Smart Panel -->
     <div class="smart-panel">
         <h1>Traveler's Site</h1>
+        <p>Your gateway to exploring new horizons</p>
     </div>
 
     <div class="container">
@@ -54,7 +37,58 @@
                 <!-- Registration Form -->
                 <form action="" class="sign-up-form">
                     <h2 class="title">Register</h2>
-                    <!-- Registration fields (same as before) -->
+                    <div class="input-field">
+                        <em class="fa fa-user"></em>
+                        <input type="text" placeholder="Username" id="reg-username" minlength="4" title="Username must be at least 4 characters long" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-envelope"></em>
+                        <input type="email" placeholder="Email" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-phone"></em>
+                        <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-lock"></em>
+                        <input type="password" placeholder="Password" id="reg-password" minlength="8" title="Password must be at least 8 characters long" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-lock"></em>
+                        <input type="password" placeholder="Retype Password" id="reg-retype-password" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-venus-mars"></em>
+                        <select required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-plane"></em>
+                        <select required>
+                            <option value="" disabled selected>Travel Type</option>
+                            <option value="solo">Solo</option>
+                            <option value="couple">Couple</option>
+                            <option value="family">Family</option>
+                            <option value="friends">Friends</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-calendar"></em>
+                        <input type="date" id="travel-date" title="Date must be before today" required />
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-file-alt"></em>
+                        <textarea placeholder="Tell us about yourself..." required></textarea>
+                    </div>
+                    <div class="input-field">
+                        <em class="fa fa-id-card"></em>
+                        <input type="file" id="profile-pic" accept="image/*" required />
+                    </div>
+                    <input type="submit" value="Register" class="btn solid" />
                 </form>
             </div>
         </div>
@@ -81,12 +115,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Greeting message -->
-    <div id="greeting" style="display: none;">
-        <h1>Hi Traveler!</h1>
-    </div>
-
     <script src="main.js"></script>
     <script>
         // Set the max attribute for the date input to today's date
@@ -131,13 +159,6 @@
             if (password.length < 8) {
                 alert("Password must be at least 8 characters long.");
                 e.preventDefault(); // Prevent form submission
-            }
-
-            // Simulate successful login
-            if (username.length >= 4 && password.length >= 8) {
-                e.preventDefault(); // Prevent form submission for demo
-                document.querySelector('.signin-signup').style.display = 'none'; // Hide forms
-                document.getElementById('greeting').style.display = 'block'; // Show greeting
             }
         });
     </script>
